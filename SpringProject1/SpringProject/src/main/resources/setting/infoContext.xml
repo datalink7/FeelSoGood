@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="info" class="spring.day0424.ex3.MyInfo">
+		<!-- constructor injection -->
+		<constructor-arg value="영탁"/>
+		<constructor-arg value="B형"/>
+		
+		<!-- setter injection -->
+		<property name="java" value="98"/>
+		<property name="jsp" value="100"/>
+		<property name="spring">
+			<value>70</value>
+		</property>
+	</bean>
+
+</beans>

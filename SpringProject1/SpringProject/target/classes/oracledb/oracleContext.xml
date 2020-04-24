@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="oracle" class="spring.day0424.ex4.MyOracle">
+		<!-- constructor injection -->
+		<constructor-arg value="oracle.jdbc.driver.OracleDriver"/>
+		<constructor-arg value="jdbc:oracle:thin:@192.168.0.96:1521:xe"/>
+		
+		<!-- setter injection -->
+		<property name="username" value="angel"/>
+		<property name="password" value="a1234"/>
+	</bean>
+
+</beans>

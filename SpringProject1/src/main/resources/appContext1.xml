@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- 객체 선언 -->
+	<bean id="hello" class="spring.day0424.ex1.Hello"/>
+	
+	<bean id="sawon" class="spring.day0424.ex2.Sawon">
+		<!-- 생성자 주입 - constructor injection -->
+		<constructor-arg>
+			<value>이영자</value>
+		</constructor-arg>
+		<constructor-arg value="010-123-1234"/>
+		<constructor-arg value="서울"/>
+	</bean>
+
+	<!-- shop -->
+	<bean id="shop" class="spring.day0424.ex5.Shop">
+		<constructor-arg>
+			<value>스프링은 무엇인가 교재</value>
+		</constructor-arg>
+		<property name="price" value="23000"/>
+	</bean>
+	
+	<!-- cart -->
+	<bean id="cart" class="spring.day0424.ex5.Cart">
+		<!-- <constructor-arg ref="shop"/> -->
+		
+		<!-- ref 추가하는 다른방법 -->
+		<constructor-arg>
+			<ref bean="shop"/>
+		</constructor-arg>
+		<property name="cnt" value="2"/>
+	</bean>
+	
+	<!-- hobby -->
+	<bean id="hobby" class="spring.day0424.ex6.Hobby">
+		<constructor-arg value="임영웅"/>
+		<constructor-arg>
+			<list>
+				<value>게임</value>
+				<value>웹툰</value>
+				<value>여행</value>
+				<value>낚시</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
